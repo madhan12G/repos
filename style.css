@@ -1,22 +1,27 @@
-/* style.css */
+/* Modernized and more attractive style.css */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background: linear-gradient(135deg, #f9f9f9 60%, #e3f2fd 100%);
+  color: #222;
+  min-height: 100vh;
 }
 
+/* Header and Navigation */
 header {
-  background-color: #1f2d3d;
+  background: linear-gradient(90deg, #1f2d3d 60%, #00bcd4 100%);
   color: white;
-  padding: 20px 0;
+  padding: 24px 0 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 24px rgba(31,45,61,0.15);
+  transition: background 0.5s;
 }
 
 .container {
@@ -25,101 +30,151 @@ header {
   align-items: center;
   max-width: 1000px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s, text-shadow 0.3s;
+  padding: 5px 12px;
+  border-radius: 5px;
 }
 
-nav a:hover {
-  color: #00bcd4;
+nav a:hover, nav a:focus {
+  color: #fff;
+  background: #00bcd4;
+  text-shadow: 0 2px 8px #00bcd480;
+  outline: none;
 }
 
 section {
-  padding: 60px 20px;
+  padding: 64px 20px 48px 20px;
   max-width: 900px;
   margin: auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+  box-shadow: 0 2px 36px rgba(31,45,61,0.07);
+  margin-top: 32px;
 }
 
+/* Skills Grid */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
 }
 
 .skill-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 18px;
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.08), 0 1.5px 8px #00bcd415;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s, box-shadow 0.25s;
+  min-width: 120px;
+  max-width: 170px;
 }
 
 .skill-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.09) rotate(-2deg);
+  box-shadow: 0 6px 32px rgba(0, 188, 212, 0.16), 0 3px 12px #00bcd435;
 }
 
 .skill-card img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 8px #00bcd420);
 }
 
+/* Projects */
 .project {
-  margin-bottom: 40px;
-  transition: transform 0.3s ease;
+  margin-bottom: 44px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px #00bcd410;
+  padding: 22px;
+  transition: transform 0.22s, box-shadow 0.22s;
 }
 
 .project video {
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 18px rgba(0,0,0,0.23);
   margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
+  transition: box-shadow 0.3s;
 }
-
 
 .project:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px) scale(1.01);
+  box-shadow: 0 8px 36px #00bcd425;
 }
 
+/* Forms */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
+  gap: 18px;
+  max-width: 480px;
+  margin: 32px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 22px;
+  box-shadow: 0 2px 24px #00bcd420;
 }
 
 form input, form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 13px;
+  border: 1.5px solid #b0bec5;
   border-radius: 6px;
   font-size: 16px;
+  background: #f5fafd;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #00bcd4;
+  outline: none;
+  box-shadow: 0 0 0 2px #00bcd430;
 }
 
 form button {
-  background-color: #1f2d3d;
+  background: linear-gradient(90deg, #1f2d3d 60%, #00bcd4 100%);
   color: white;
   border: none;
-  padding: 12px;
+  padding: 14px;
   border-radius: 6px;
+  font-size: 1.07rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 1.5px 8px #00bcd415;
+  transition: background 0.3s, box-shadow 0.2s;
+  letter-spacing: 0.5px;
 }
 
-form button:hover {
-  background-color: #00bcd4;
+form button:hover, form button:focus {
+  background: #0097a7;
+  box-shadow: 0 4px 20px #00bcd425;
+  outline: none;
 }
 
+/* Social Links */
 .social-links {
-  margin-top: 20px;
+  margin-top: 28px;
   text-align: center;
 }
 
@@ -127,12 +182,25 @@ form button:hover {
   margin: 0 10px;
   color: #1f2d3d;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.09rem;
+  transition: color 0.25s, text-shadow 0.25s;
 }
 
+.social-links a:hover, .social-links a:focus {
+  color: #00bcd4;
+  text-shadow: 0 2px 8px #00bcd490;
+  outline: none;
+}
+
+/* Footer */
 footer {
-  background-color: #1f2d3d;
+  background: linear-gradient(90deg, #1f2d3d 60%, #00bcd4 100%);
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px 0 17px 0;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 -2px 18px #1f2d3d30;
+  font-size: 1.03rem;
+  letter-spacing: 0.3px;
 }
